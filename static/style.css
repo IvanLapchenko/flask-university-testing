@@ -1,0 +1,99 @@
+html{
+    font-family: 'Courier New', monospace;
+}
+
+
+form, .tables_list {
+  padding: 20px;
+  margin: 30px;
+  background-color: #f0d795;
+  color: #493959;
+  text-align: center;
+}
+
+input, label  {
+  margin: 10px;
+}
+
+input[type=submit], .link {
+background-color: #c6cc5a;
+border: none;
+border-radius: 10px;
+color: white;
+padding: 8px 16px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
+img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+}
+
+li {
+float: left;
+}
+
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+li a:hover {
+background-color: #c5c96f;
+}
+
+
+.tables_list {
+display: flex;
+gap: 0.625%;
+}
+
+.tables_list a {
+flex: 1;
+text-decoration: none;
+outline: none;
+text-align: center;
+line-height: 2;
+color: black;
+}
+
+.tables_list a:link,
+.tables_list a:visited,
+.tables_list a:focus {
+background: palegoldenrod;
+color: black;
+}
+
+.tables_list a:hover {
+background: orange;
+}
+
+input[type=text] input[type=password]{
+width: 30%;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+}
+
+label, span, a {
+  color:  #5c0650;
+}

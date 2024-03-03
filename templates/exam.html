@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="{{ url_for('check-test') }}" method="post">
+    {% for single_test in all_data %}
+        <br><span>{{ single_test[0] }}</span><br>
+        {% for j in single_test[1:] %}
+        <input type="radio" name="{{ single_test[0] }}" id="{{ j }}" value="{{ j }}" >
+        <label for="{{ j }}" name="{{ j }}">{{ j }}</label><br>
+        {% endfor %}
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

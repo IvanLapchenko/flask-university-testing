@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+      <form action = "{{ url_for('create_exam') }}" method = "POST">
+         <h3>Add new test</h3>
+
+            <select name="name">
+                  {% for exam in exams %}
+                  <option value="{{ exam.id }}">{{ exam.name }}</option>
+                  {% endfor %}
+            </select>
+
+            <label for="question">Question</label>
+            <input type = "text" id="question" name = "question" /><br>
+
+            <label for="ans1">First answer</label>
+            <input type = "text" id="ans1" name = "ans1" /><br>
+
+            <label for="ans2">Second answer</label>
+            <input type = "text" id="ans2" name = "ans2" /><br>
+
+            <label for="correct">Correct answer</label>
+            <input type = "text" id="correct" name = "correct" /><br>
+
+
+            <input type = "submit" value = "Submit" /><br>
+      </form>
+{% endblock %}

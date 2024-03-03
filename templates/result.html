@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>You scored {{ correct_answers }} points!</h1>
+
+    {% if passed %}
+        <img src="static/pass.jpg">
+    {% else %}
+        <img src="static/lose.png">
+    {% endif %}
+
+{% endblock %}
