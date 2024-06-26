@@ -1,28 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-      <form action = "{{ url_for('create_exam') }}" method = "POST">
-         <h3>Add new test</h3>
 
-            <select name="name">
+      <form action = "{{ url_for('create_ex') }}" method = "POST">
+            <h3>Додати новий екзамен</h3>
+
+            <label for="question">Назва</label>
+            <input type = "text" id="name" name = "name" /><br>
+
+            <input type = "submit" value = "Додати" /><br>
+      </form>
+      <form action = "{{ url_for('create_q') }}" method = "POST">
+         <h3>Додати новий тест</h3>
+
+            <label>Екзамен</label>
+            <select name="exam_id">
                   {% for exam in exams %}
                   <option value="{{ exam.id }}">{{ exam.name }}</option>
                   {% endfor %}
             </select>
 
-            <label for="question">Question</label>
+            <label for="question">Питання</label>
             <input type = "text" id="question" name = "question" /><br>
 
-            <label for="ans1">First answer</label>
+            <label for="ans1">Перша відповідь</label>
             <input type = "text" id="ans1" name = "ans1" /><br>
 
-            <label for="ans2">Second answer</label>
+            <label for="ans2">Друга відповідь</label>
             <input type = "text" id="ans2" name = "ans2" /><br>
 
-            <label for="correct">Correct answer</label>
+            <label for="correct">Правильна відповідь</label>
             <input type = "text" id="correct" name = "correct" /><br>
 
 
-            <input type = "submit" value = "Submit" /><br>
+            <input type = "submit" value = "Додати" /><br>
       </form>
 {% endblock %}

@@ -3,10 +3,17 @@
 {% block content %}
 
 <section>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="notification">
+            {{ messages[0] }}. Go to <a href="{{ url_for('login') }}">login page</a>.
+        </div>
+    {% endif %}
+    {% endwith %}
     <h2>Доступні Екзамени</h2>
     {% for exam in exams %}
     <div class="exam-card">
-        <h3>{{ exam }}</h3>
+        <h3>{{ exam.name }}</h3>
         <a href="{{ url_for('exam', exam_id=exam.id) }}">Почати тест</a>
     </div>
     {% endfor %}

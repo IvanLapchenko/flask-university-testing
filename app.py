@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_login import LoginManager
-
+import models
 
 app = Flask(__name__)
 

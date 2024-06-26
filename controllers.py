@@ -21,9 +21,9 @@ def create_exam(name):
         session.rollback()
         flash(f'Error creating exam: {str(e)}', 'error')
 
-def create_question(exam_id, question, answer1, answer2, answer3, correct):
+def create_question(exam_id, question, answer1, answer2, correct):
     try:
-        new_question = Question(exam_id=exam_id, question=question, answer1=answer1, answer2=answer2, answer3=answer3, correct=correct)
+        new_question = Question(exam_id=exam_id, question=question, answer1=answer1, answer2=answer2, correct=correct)
         session.add(new_question)
         session.commit()
         flash('Question created successfully', 'success')
@@ -33,7 +33,8 @@ def create_question(exam_id, question, answer1, answer2, answer3, correct):
 
 def get_all_exam_names():
     try:
-        exam_names = [exam.name for exam in session.query(Exam).all()]
+        # exam_names = [exam.name for exam in session.query(Exam).all()]
+        exam_names = session.query(Exam).all()
         return exam_names
     except Exception as e:
         flash(f'Error retrieving exam names: {str(e)}', 'error')
@@ -49,7 +50,6 @@ def get_questions_for_exam(exam_id):
             answers = {
                 'answer1': question_obj.answer1,
                 'answer2': question_obj.answer2,
-                'answer3': question_obj.answer3,
             }
             correct_answer = question_obj.correct
             

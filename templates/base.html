@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Екзамен</title>
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 <ul class="nav">
     <li><a href="/">Головна сторінка</a></li>
-    <li><a href="/create_exam">Додати новий екзамен</a></li>
+    <li><a href="/create_ex">Додати новий екзамен</a></li>
     {% if current_user.is_authenticated %}
         <li><a href="/logout">Вийти</a></li>
     {% else %}

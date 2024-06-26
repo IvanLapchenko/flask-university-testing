@@ -37,7 +37,6 @@ class Question(Base):
     question = Column(String(256))
     answer1 = Column(String(256))
     answer2 = Column(String(256))
-    answer3 = Column(String(256))
     correct = Column(String(256))
     exam = relationship('Exam', back_populates='questions')
 
